@@ -12,39 +12,40 @@ from datetime import datetime, timedelta
 # Define and parse arguments.
 @dataclass
 class FedArguments:
-    fed_alg: Optional[str] = field(default="fedavg", metadata={"help": "the algorithm to use"})
+    fed_alg: Optional[str] = field(default="gd", metadata={"help": "the algorithm to use"})
     num_rounds: Optional[int] = field(default=500, metadata={"help": "the number of rounds"})
-    num_clients: Optional[int] = field(default=2, metadata={"help": "the number of clients"})
-    sample_clients: Optional[int] = field(default=2, metadata={"help": "the number of clients to sample"})
+    num_clients: Optional[int] = field(default=1, metadata={"help": "the number of clients"})
+    sample_clients: Optional[int] = field(default=1, metadata={"help": "the number of clients to sample"})
     split_strategy: Optional[str] = field(default="iid", metadata={"help": "the split strategy"})
     prox_mu: Optional[float] = field(default=0.01, metadata={"help": "the mu parameter of FedProx"})
     fedopt_tau: Optional[float] = field(default=1e-3, metadata={"help": "the tau parameter of FedAdagrad, FedYogi and FedAdam"})
     fedopt_eta: Optional[float] = field(default=1e-3, metadata={"help": "the global learning rate parameter of FedAdagrad, FedYogi and FedAdam"})
     fedopt_beta1: Optional[float] = field(default=0.9, metadata={"help": "the beta1 parameter of FedYogi and FedAdam"})
     fedopt_beta2: Optional[float] = field(default=0.99, metadata={"help": "the beta2 parameter of FedYogi and FedAdam"})
-    save_model_freq: Optional[int] = field(default=50, metadata={"help": "the frequency to save the model. 50 means save every 50 rounds"})
+    save_model_freq: Optional[int] = field(default=200, metadata={"help": "the frequency to save the model. 50 means save every 50 rounds"})
 
 @dataclass
 class ScriptArguments:
-
+   #base_model_path
     model_name_or_path: Optional[str] = field(default="meta-llama/Llama-2-7b-hf", metadata={"help": "the model name"})
     dataset_name: Optional[str] = field(
-        default="lucasmccabe-lmi/CodeAlpaca-20k", metadata={"help": "the dataset name"}
+        default="gsm8k", metadata={"help": "the dataset name"}
     )
+    #gsm8k  lucasmccabe-lmi/CodeAlpaca-20k
     log_with: Optional[str] = field(default="none", metadata={"help": "use 'wandb' to log with wandb"})
     learning_rate: Optional[float] = field(default=2e-5, metadata={"help": "the learning rate"})    # vicuna and alpaca use 2e-5
-    batch_size: Optional[int] = field(default=16, metadata={"help": "the batch size"})
+    batch_size: Optional[int] = field(default=1, metadata={"help": "the batch size"})  #16 0217
     seq_length: Optional[int] = field(default=512, metadata={"help": "Input sequence length"})
     gradient_accumulation_steps: Optional[int] = field(
         default=1, metadata={"help": "the number of gradient accumulation steps"}
     )
     load_in_8bit: Optional[bool] = field(default=False, metadata={"help": "load the model in 8 bits precision"})
-    load_in_4bit: Optional[bool] = field(default=False, metadata={"help": "load the model in 4 bits precision"})
-    use_peft: Optional[bool] = field(default=False, metadata={"help": "Wether to use PEFT or not to train adapters"})
+    load_in_4bit: Optional[bool] = field(default=True, metadata={"help": "load the model in 4 bits precision"})
+    use_peft: Optional[bool] = field(default=True, metadata={"help": "Wether to use PEFT or not to train adapters"})
     trust_remote_code: Optional[bool] = field(default=False, metadata={"help": "Enable `trust_remote_code`"})
-    output_dir: Optional[str] = field(default="output", metadata={"help": "the output directory"})
+    output_dir: Optional[str] = field(default="save", metadata={"help": "the output directory"})
     peft_lora_r: Optional[int] = field(default=8, metadata={"help": "the r parameter of the LoRA adapters"})
-    peft_lora_alpha: Optional[int] = field(default=16, metadata={"help": "the alpha parameter of the LoRA adapters"})
+    peft_lora_alpha: Optional[int] = field(default=8, metadata={"help": "the alpha parameter of the LoRA adapters"})
     logging_steps: Optional[int] = field(default=100, metadata={"help": "the number of logging steps"})
     use_auth_token: Optional[bool] = field(default=False, metadata={"help": "Use HF auth token to access the model"})   # token and use_auth_token cannot be used together
     num_train_epochs: Optional[int] = field(default=3, metadata={"help": "the number of training epochs"})
@@ -61,6 +62,10 @@ class ScriptArguments:
     dpo_beta: Optional[float] = field(default=0.1, metadata={"help": "the beta parameter of DPO"})
     dataset_sample: Optional[int] = field(default=20000, metadata={"help": "the number of samples to use from the dataset"})
     local_data_dir: Optional[str] = field(default=None, metadata={"help": "the local data directory if you want to use downloaded data"})
+    
+    alt_opt: Optional[bool] = field(default=False, metadata={"help": "conduct alternating optimization for lora"})
+
+
 
 parser = HfArgumentParser((ScriptArguments, FedArguments))
 script_args, fed_args = parser.parse_args_into_dataclasses()
@@ -129,7 +134,7 @@ def get_model_config(script_args):
 def save_config(script_args, fed_args):
     now_time = (datetime.now()).strftime("%Y%m%d%H%M%S")
     dataset_name_split = os.path.basename(script_args.dataset_name)
-    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_{now_time}"
+    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_alt{script_args.alt_opt}_{now_time}"
     while True:
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)

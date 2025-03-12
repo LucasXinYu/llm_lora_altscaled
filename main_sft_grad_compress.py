@@ -1,9 +1,9 @@
-import sys
 import copy
 import os
 from tqdm import tqdm
 import numpy as np
 import time
+import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import DataCollatorForCompletionOnlyLM
 from peft import get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict, prepare_model_for_kbit_training
@@ -13,28 +13,24 @@ from federated_learning import *
 from config import get_config, save_config, get_model_config, get_training_args
 
 
-
 # ===== Define the arguments =====
 script_args, fed_args, peft_config = get_config()
 training_args = get_training_args(script_args, script_args.learning_rate)
 save_config(script_args, fed_args)
 print(script_args, fed_args)
 
-
-log_file_path = os.path.join(script_args.output_dir, 'log.txt')
-sys.stdout = open(log_file_path, 'w')
-
-
 # ===== Load the dataset =====
 dataset = get_dataset(script_args.dataset_name, script_args.local_data_dir)
 dataset = process_sft_dataset(script_args.dataset_name, dataset, script_args.dataset_sample)
 print('dataload finished!')
+
 # ===== Split the dataset into clients =====
 local_datasets = split_dataset(fed_args, script_args, dataset)
 sample_num_list = [len(local_datasets[i]) for i in range(fed_args.num_clients)]
 print('==================')
 print('sample_num_list:')
 print(sample_num_list)
+
 # ===== Get model config =====
 device_map, quantization_config, torch_dtype = get_model_config(script_args)
 
@@ -50,20 +46,17 @@ if script_args.load_in_8bit or script_args.load_in_4bit:
     model = prepare_model_for_kbit_training(
                 model, use_gradient_checkpointing=training_args.gradient_checkpointing
             )
-# 1. train A and B alternating
-# 2. low rank different
 
+# Apply LoRA to the model
 model = get_peft_model(model, peft_config)
-###0215### 只更新 A，不更新 B
+
+# Freeze all parameters except LoRA B
 for name, param in model.named_parameters():
-    if "lora_B" in name:  # LoRA 层 B
-        param.requires_grad = True  # 允许 B 更新
-    elif "lora_A" in name:  # LoRA 层 A
-        param.requires_grad = True  #  冻结 A
-for name, param in model.named_parameters():
-    if "lora" in name:
-        print(f"{name}: requires_grad={param.requires_grad}")
-###    ###
+    if "lora_B" in name:  # LoRA layer B
+        param.requires_grad = True  # Allow B to be updated
+    else:
+        param.requires_grad = False  # Freeze all other parameters
+
 model.print_trainable_parameters()
 
 model.config.use_cache = False  
@@ -96,22 +89,13 @@ for round in tqdm(range(fed_args.num_rounds)):
     clients_this_round = get_clients_this_round(fed_args, round)
 
     print(f">> ==================== Round {round+1} : {clients_this_round} ====================")
-    
-    
-    # ===== 根据轮次奇偶性设置 LoRA 参数更新策略 =====
-    if (round + 1) % 2 == 1:  # 奇数轮次，更新 A，冻结 B
-        for name, param in model.named_parameters():
-            if "lora_B" in name:  # LoRA 层 B
-                param.requires_grad = not script_args.alt_opt  # 冻结 B
-            elif "lora_A" in name:  # LoRA 层 A
-                param.requires_grad = True  # 允许 A 更新
-    else:  # 偶数轮次，更新 B，冻结 A
-        for name, param in model.named_parameters():
-            if "lora_B" in name:  # LoRA 层 B
-                param.requires_grad = True  # 允许 B 更新
-            elif "lora_A" in name:  # LoRA 层 A
-                param.requires_grad = not script_args.alt_opt   # 冻结 A
-    
+
+    # ===== Resample LoRA B from a Gaussian distribution =====
+    for name, param in model.named_parameters():
+        if "lora_B" in name:  # LoRA layer B
+            # Resample B from a Gaussian distribution
+            new_B = torch.randn_like(param.data) * 0.01  # Adjust the scale (0.01) as needed
+            param.data.copy_(new_B)  # Update B with the new values
 
     for client in range(fed_args.num_clients):
 
@@ -167,6 +151,3 @@ for round in tqdm(range(fed_args.num_rounds)):
 end_time = time.time()
 elapsed_time = end_time - start_time
 print(f"iteration time: {elapsed_time} s")
-
-
-sys.stdout.close()

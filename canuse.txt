@@ -1,0 +1,25 @@
+'''
+    with torch.no_grad():
+        ba_ranks = []
+        b_ranks = []
+        for name, param in model.named_parameters():
+            print(name)
+            if "lora_B" in name:
+                # Adjust the key replacement logic if necessary
+                replaced_key = name.replace("lora_B", "lora_A").replace(".default", "")
+                if replaced_key in global_dict:
+                    ba_ranks.append(compute_rank(param @ global_dict[replaced_key]))
+                else:
+                    print(f"Key {replaced_key} not found in global_dict")
+                b_ranks.append(compute_rank(param))
+        
+        ba_rank_history.append(np.mean(ba_ranks))
+        b_rank_history.append(np.mean(b_ranks))
+        print('ba_ranks')
+        print(ba_ranks)
+        print('b_ranks')
+        print(b_ranks)
+            
+    np.save(os.path.join(script_args.output_dir, "ba_rank_history.npy"), np.array(ba_rank_history))
+    np.save(os.path.join(script_args.output_dir, "b_rank_history.npy"), np.array(b_rank_history))
+'''
