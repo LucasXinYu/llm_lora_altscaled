@@ -17,6 +17,9 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
             data_collator=data_collator,
             global_state=global_dict,
             prox_mu=fed_args.prox_mu,
+            lr = script_args.learning_rate,
+            rank = script_args.peft_lora_r,
+            optim = script_args.optim,
         )
     elif fed_args.fed_alg == 'scaffold':
         trainer = SFTTrainerSCAFFOLD(
@@ -320,31 +323,202 @@ class SFTTrainerGD(SFTTrainer):
 
 ##########################
 
+import torch
+import torch.optim as optim
+import torch
+import torch.optim as optim
+
+class SGDr(optim.Optimizer):
+    def __init__(self, model, lr, weight_decay=0.0, rank=4, reg=1e-6):
+        if lr < 0.0:
+            raise ValueError(f"Invalid learning rate: {lr}")
+        if weight_decay < 0.0:
+            raise ValueError(f"Invalid weight_decay value: {weight_decay}")
+
+        self.model = model
+        self.rank = rank
+        self.reg = reg
+        self.learning_rate = lr
+        self.weight_decay = weight_decay
+
+        # Collect all parameters from the model
+        params = list(model.parameters())
+        defaults = dict(lr=lr, weight_decay=weight_decay, rank=rank, reg=reg)
+        super(SGDr, self).__init__(params, defaults)
+
+    def step(self, closure=None):
+        loss = None
+        if closure is not None:
+            loss = closure()
+
+        named_params = list(self.model.named_parameters())
+        i = 0
+        while i < len(named_params):
+            name1, p1 = named_params[i]
+            if name1.endswith("lora_A.default.weight"):  # check lora_A
+                #if i + 1 < len(named_params):
+                        name2, p2 = named_params[i + 1]
+                    #if name2.endswith("lora_B.default.weight") and name2.replace("lora_B.default.weight", "lora_A.default.weight") == name1:
+                        i+=1
+                        if p1.grad is None and p2.grad is None:
+                            continue
+
+                        dim_1 = p2.data.shape[0] // 2
+
+                        if p1.grad is not None:
+                            # update p1
+                            grad1_0 = p1.grad.data[0:self.rank, :]
+                            grad1_1 = p1.grad.data[self.rank:, :]
+                            scale1_0 = p2.data[0:dim_1, :]
+                            scale1_1 = p2.data[dim_1:, :]
+
+                            try:
+                                grad1_0_scaled = torch.inverse(scale1_0.T @ scale1_0 + self.reg * torch.eye(self.rank).to(scale1_0.device)) @ grad1_0
+                            except:
+                                grad1_0_scaled = grad1_0
+
+                            try:
+                                grad1_1_scaled = torch.inverse(scale1_1.T @ scale1_1 + self.reg * torch.eye(self.rank).to(scale1_1.device)) @ grad1_1
+                            except:
+                                grad1_1_scaled = grad1_1
+
+                            grad1_scaled = torch.cat([grad1_0_scaled, grad1_1_scaled])
+                            p1.data.add_(grad1_scaled, alpha=-self.learning_rate)
+
+                        if p2.grad is not None:
+                            # update p2
+                            grad2_0 = p2.grad.data[0:dim_1, :]
+                            grad2_1 = p2.grad.data[dim_1:, :]
+                            scale2_0 = p1.data[0:self.rank, :]
+                            scale2_1 = p1.data[self.rank:, :]
+
+                            try:
+                                grad2_0_scaled = grad2_0 @ torch.inverse(scale2_0 @ scale2_0.T + self.reg * torch.eye(self.rank).to(scale2_0.device))
+                            except:
+                                grad2_0_scaled = grad2_0
+
+                            try:
+                                grad2_1_scaled = grad2_1 @ torch.inverse(scale2_1 @ scale2_1.T + self.reg * torch.eye(self.rank).to(scale2_1.device))
+                            except:
+                                grad2_1_scaled = grad2_1
+
+                            grad2_scaled = torch.cat([grad2_0_scaled, grad2_1_scaled])
+                            p2.data.add_(grad2_scaled, alpha=-self.learning_rate)
+            i += 1
+
+        return loss
+
+        """
+class SGDr(optim.Optimizer):
+    def __init__(self, params, lr, weight_decay=0.0, rank=4, reg=1e-6):
+        if lr < 0.0:
+            raise ValueError(f"Invalid learning rate: {lr}")
+        if weight_decay < 0.0:
+            raise ValueError(f"Invalid weight_decay value: {weight_decay}")
+
+        defaults = dict(lr=lr, weight_decay=weight_decay, rank=rank, reg=reg)
+        super(SGDr, self).__init__(params, defaults)
+
+    def step(self, closure=None):
+        loss = None
+        if closure is not None:
+            loss = closure()
+        i = 0 
+        for group in self.param_groups:
+            print('================')
+            print(i)
+            i+=1
+            lr = group['lr']
+            weight_decay = group['weight_decay']
+            rank = group['rank']
+            reg = group['reg']
+            j=0
+            for p1, p2 in list(zip(group["params"], group["params"][1:]))[::2]:
+               
+                print(j)
+                j+=1
+                dim_1 = p2.data.shape[0] // 2
+                if p1.grad is not None:
+                    grad1_0 = p1.grad.data[0:rank, :]
+                    grad1_1 = p1.grad.data[rank:, :]
+                    scale1_0 = p2.data[0:dim_1, :]
+                    scale1_1 = p2.data[dim_1:, :]
+
+                    try:
+                        grad1_0_scaled = torch.inverse(scale1_0.T @ scale1_0 + reg * torch.eye(rank).to(scale1_0.device)) @ grad1_0
+                    except:
+                        grad1_0_scaled = grad1_0
+
+                    try:
+                        grad1_1_scaled = torch.inverse(scale1_1.T @ scale1_1 + reg * torch.eye(rank).to(scale1_1.device)) @ grad1_1
+                    except:
+                        grad1_1_scaled = grad1_1
+
+                    grad1_scaled = torch.cat([grad1_0_scaled, grad1_1_scaled])
+                    p1.data.add_(grad1_scaled, alpha=-lr)
+              
+
+                if p2.grad is not None:
+                    grad2_0 = p2.grad.data[0:dim_1, :]
+                    grad2_1 = p2.grad.data[dim_1:, :]
+                    scale2_0 = p1.data[0:rank, :]
+                    scale2_1 = p1.data[rank:, :]
+        
+                    try:
+                        grad2_0_scaled = grad2_0 @ torch.inverse(scale2_0 @ scale2_0.T + reg * torch.eye(rank).to(scale2_0.device))
+                    except:
+                        grad2_0_scaled = grad2_0
+
+                    try:
+                        grad2_1_scaled = grad2_1 @ torch.inverse(scale2_1 @ scale2_1.T + reg * torch.eye(rank).to(scale2_1.device))
+                    except:
+                        grad2_1_scaled = grad2_1
+
+                    grad2_scaled = torch.cat([grad2_0_scaled, grad2_1_scaled])
+                    p2.data.add_(grad2_scaled, alpha=-lr)   
+        return loss
+"""
 class SFTTrainerFedProx(SFTTrainer):
-    def __init__(self, global_state, prox_mu, **kwargs):
+    def __init__(self, global_state, prox_mu, lr, rank, optim, **kwargs):
         super(SFTTrainerFedProx, self).__init__(**kwargs)
         self.global_state = global_state
         self.mu = prox_mu
-    
-    def compute_loss(self, model, inputs, return_outputs=False):
+        self.lr = lr
+        self.rank = rank
+        self.optim = optim
 
-        return_values = super(SFTTrainerFedProx, self).compute_loss(model, inputs, return_outputs=return_outputs)
 
-        if return_outputs:
-            loss, outputs = return_values
+        self.create_optimizer()  
+        print(f"Optimizer set to: {self.optimizer.__class__.__name__}")
+
+    def create_optimizer(self):
+
+        if self.optim == "sgd":
+            optimizer_cls = torch.optim.SGD
+            optimizer_kwargs = {
+                "lr": self.lr,  # 使用配置中的学习率
+                "weight_decay": 1e-2,  # 权重衰减 (L2 正则化)
+                "momentum": 0.9  # SGD 的动量参数
+            }
+            self.optimizer = optimizer_cls(self.model.parameters(), **optimizer_kwargs)
+
+        elif self.optim == "sgdr":
+            optimizer_cls = SGDr  # 假设 SGDr 是一个自定义优化器
+            optimizer_kwargs = {
+                "lr": self.lr,  # 使用配置中的学习率
+                "weight_decay": 1e-3,  # 权重衰减 (L2 正则化)
+                "rank": self.rank,  # 使用配置中的 rank 参数
+                "reg": 1e-6  # SGDr 的 reg 参数
+            }
+            self.optimizer = optimizer_cls(self.model, **optimizer_kwargs)
+
         else:
-            loss = return_values
+            raise ValueError(f"Unsupported optimizer type: {self.optim}")
 
-        # Apply FedProx Loss
-        for name, param in model.named_parameters():
-            name = name.replace(".default", "")     # TODO: May need changes. to accord with peft
-            # only trainable parameters
-            if not param.requires_grad:
-                continue
-            else:
-                loss += self.mu / 2 * torch.norm(param - self.global_state[name]) ** 2
+        # 初始化优化器
+        return self.optimizer
 
-        return (loss, outputs) if return_outputs else loss
+
 
 
 class SFTTrainerSCAFFOLD(SFTTrainer):

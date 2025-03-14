@@ -139,7 +139,8 @@ for round in tqdm(range(fed_args.num_rounds)):
             local_auxiliary=auxiliary_model_list[client],
             global_auxiliary=global_auxiliary,
         )
-
+        
+        print(f"Optimizer: {trainer.optimizer.__class__.__name__}")
         results = trainer.train()
         training_loss[client].append(results.training_loss)
 

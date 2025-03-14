@@ -12,12 +12,12 @@ from datetime import datetime, timedelta
 # Define and parse arguments.
 @dataclass
 class FedArguments:
-    fed_alg: Optional[str] = field(default="gd", metadata={"help": "the algorithm to use"})
+    fed_alg: Optional[str] = field(default="fedprox", metadata={"help": "the algorithm to use"})
     num_rounds: Optional[int] = field(default=500, metadata={"help": "the number of rounds"})
     num_clients: Optional[int] = field(default=1, metadata={"help": "the number of clients"})
     sample_clients: Optional[int] = field(default=1, metadata={"help": "the number of clients to sample"})
     split_strategy: Optional[str] = field(default="iid", metadata={"help": "the split strategy"})
-    prox_mu: Optional[float] = field(default=0.01, metadata={"help": "the mu parameter of FedProx"})
+    prox_mu: Optional[float] = field(default=0.001, metadata={"help": "the mu parameter of FedProx"})
     fedopt_tau: Optional[float] = field(default=1e-3, metadata={"help": "the tau parameter of FedAdagrad, FedYogi and FedAdam"})
     fedopt_eta: Optional[float] = field(default=1e-3, metadata={"help": "the global learning rate parameter of FedAdagrad, FedYogi and FedAdam"})
     fedopt_beta1: Optional[float] = field(default=0.9, metadata={"help": "the beta1 parameter of FedYogi and FedAdam"})
@@ -33,7 +33,7 @@ class ScriptArguments:
     )
     #gsm8k  lucasmccabe-lmi/CodeAlpaca-20k
     log_with: Optional[str] = field(default="none", metadata={"help": "use 'wandb' to log with wandb"})
-    learning_rate: Optional[float] = field(default=2e-5, metadata={"help": "the learning rate"})    # vicuna and alpaca use 2e-5
+    learning_rate: Optional[float] = field(default=2e-4, metadata={"help": "the learning rate"})    # vicuna and alpaca use 2e-5
     batch_size: Optional[int] = field(default=1, metadata={"help": "the batch size"})  #16 0217
     seq_length: Optional[int] = field(default=512, metadata={"help": "Input sequence length"})
     gradient_accumulation_steps: Optional[int] = field(
@@ -50,13 +50,12 @@ class ScriptArguments:
     use_auth_token: Optional[bool] = field(default=False, metadata={"help": "Use HF auth token to access the model"})   # token and use_auth_token cannot be used together
     num_train_epochs: Optional[int] = field(default=3, metadata={"help": "the number of training epochs"})
     max_steps: Optional[int] = field(default=10, metadata={"help": "the number of training steps"})
-    save_steps: Optional[int] = field(
-        default=1000, metadata={"help": "Number of updates steps before two checkpoint saves"}
-    )
+    save_steps: Optional[int] = field(default=1000, metadata={"help": "Number of updates steps before two checkpoint saves"})
     save_total_limit: Optional[int] = field(default=10, metadata={"help": "Limits total number of checkpoints."})
     push_to_hub: Optional[bool] = field(default=False, metadata={"help": "Push the model to HF Hub"})
     hub_model_id: Optional[str] = field(default=None, metadata={"help": "The name of the model on HF Hub"})
     gradient_checkpointing: Optional[bool] = field(default=True, metadata={"help": "Enable gradient checkpointing"})
+    optim: Optional[str] = field(default="sgd",metadata={"help": "The optimizer to use."},)
     template: Optional[str] = field(default="alpaca", metadata={"help": "the template to use"})
     seed: Optional[int] = field(default=2023, metadata={"help": "the seed to use"})
     dpo_beta: Optional[float] = field(default=0.1, metadata={"help": "the beta parameter of DPO"})

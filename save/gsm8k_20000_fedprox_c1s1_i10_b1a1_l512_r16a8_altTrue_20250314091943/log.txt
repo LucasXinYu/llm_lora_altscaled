@@ -1,0 +1,5 @@
+>> ===== After processing, Dataset gsm8k has 14946 examples. =====
+dataload finished!
+==================
+sample_num_list:
+[14946]

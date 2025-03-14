@@ -1,0 +1,529 @@
+>> ===== After processing, Dataset gsm8k has 14946 examples. =====
+dataload finished!
+==================
+sample_num_list:
+[14946]
+base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+trainable params: 8,388,608 || all params: 3,508,801,536 || trainable%: 0.23907331075678143
+>> ==================== Round 1 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.9045, 'train_samples_per_second': 1.01, 'train_steps_per_second': 1.01, 'train_loss': 1.0753275871276855, 'epoch': 1.0}
+>> ==================== Round 2 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.8578, 'train_samples_per_second': 1.129, 'train_steps_per_second': 1.129, 'train_loss': 1.1852099418640136, 'epoch': 1.0}
+>> ==================== Round 3 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3952, 'train_samples_per_second': 1.191, 'train_steps_per_second': 1.191, 'train_loss': 1.2810863494873046, 'epoch': 1.0}
+>> ==================== Round 4 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.4733, 'train_samples_per_second': 1.18, 'train_steps_per_second': 1.18, 'train_loss': 1.0164779663085937, 'epoch': 1.0}
+>> ==================== Round 5 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.6842, 'train_samples_per_second': 1.152, 'train_steps_per_second': 1.152, 'train_loss': 1.249150276184082, 'epoch': 1.0}
+>> ==================== Round 6 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7208, 'train_samples_per_second': 1.295, 'train_steps_per_second': 1.295, 'train_loss': 1.2444493293762207, 'epoch': 1.0}
+>> ==================== Round 7 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.0339, 'train_samples_per_second': 1.245, 'train_steps_per_second': 1.245, 'train_loss': 1.1833301544189454, 'epoch': 1.0}
+>> ==================== Round 8 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.8704, 'train_samples_per_second': 1.271, 'train_steps_per_second': 1.271, 'train_loss': 1.2284043312072754, 'epoch': 1.0}
+>> ==================== Round 9 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2321, 'train_samples_per_second': 1.215, 'train_steps_per_second': 1.215, 'train_loss': 1.3317615509033203, 'epoch': 1.0}
+>> ==================== Round 10 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.9616, 'train_samples_per_second': 1.116, 'train_steps_per_second': 1.116, 'train_loss': 1.2304754257202148, 'epoch': 1.0}
+>> ==================== Round 11 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.3127, 'train_samples_per_second': 1.074, 'train_steps_per_second': 1.074, 'train_loss': 1.0396563529968261, 'epoch': 1.0}
+>> ==================== Round 12 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.537, 'train_samples_per_second': 1.171, 'train_steps_per_second': 1.171, 'train_loss': 1.1056709289550781, 'epoch': 1.0}
+>> ==================== Round 13 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.8956, 'train_samples_per_second': 1.124, 'train_steps_per_second': 1.124, 'train_loss': 1.2301998138427734, 'epoch': 1.0}
+>> ==================== Round 14 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9847, 'train_samples_per_second': 1.252, 'train_steps_per_second': 1.252, 'train_loss': 1.0780176162719726, 'epoch': 1.0}
+>> ==================== Round 15 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.1349, 'train_samples_per_second': 1.095, 'train_steps_per_second': 1.095, 'train_loss': 1.2440079689025878, 'epoch': 1.0}
+>> ==================== Round 16 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1766, 'train_samples_per_second': 1.223, 'train_steps_per_second': 1.223, 'train_loss': 1.0986684799194335, 'epoch': 1.0}
+>> ==================== Round 17 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3161, 'train_samples_per_second': 1.202, 'train_steps_per_second': 1.202, 'train_loss': 1.0747344017028808, 'epoch': 1.0}
+>> ==================== Round 18 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.4451, 'train_samples_per_second': 1.184, 'train_steps_per_second': 1.184, 'train_loss': 1.1020545959472656, 'epoch': 1.0}
+>> ==================== Round 19 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.2201, 'train_samples_per_second': 1.085, 'train_steps_per_second': 1.085, 'train_loss': 1.1844137191772461, 'epoch': 1.0}
+>> ==================== Round 20 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2698, 'train_samples_per_second': 1.209, 'train_steps_per_second': 1.209, 'train_loss': 1.2311273574829102, 'epoch': 1.0}
+>> ==================== Round 21 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7063, 'train_samples_per_second': 1.149, 'train_steps_per_second': 1.149, 'train_loss': 1.0187932014465333, 'epoch': 1.0}
+>> ==================== Round 22 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.0644, 'train_samples_per_second': 1.24, 'train_steps_per_second': 1.24, 'train_loss': 1.4251906394958496, 'epoch': 1.0}
+>> ==================== Round 23 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7066, 'train_samples_per_second': 1.149, 'train_steps_per_second': 1.149, 'train_loss': 1.1961799621582032, 'epoch': 1.0}
+>> ==================== Round 24 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.786, 'train_samples_per_second': 1.284, 'train_steps_per_second': 1.284, 'train_loss': 1.3836182594299316, 'epoch': 1.0}
+>> ==================== Round 25 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.2039, 'train_samples_per_second': 1.087, 'train_steps_per_second': 1.087, 'train_loss': 1.3838912963867187, 'epoch': 1.0}
+>> ==================== Round 26 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7566, 'train_samples_per_second': 1.142, 'train_steps_per_second': 1.142, 'train_loss': 1.3023246765136718, 'epoch': 1.0}
+>> ==================== Round 27 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.5206, 'train_samples_per_second': 1.174, 'train_steps_per_second': 1.174, 'train_loss': 1.1786249160766602, 'epoch': 1.0}
+>> ==================== Round 28 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.8496, 'train_samples_per_second': 1.274, 'train_steps_per_second': 1.274, 'train_loss': 1.2618057250976562, 'epoch': 1.0}
+>> ==================== Round 29 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.2313, 'train_samples_per_second': 1.083, 'train_steps_per_second': 1.083, 'train_loss': 0.988392448425293, 'epoch': 1.0}
+>> ==================== Round 30 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9044, 'train_samples_per_second': 1.265, 'train_steps_per_second': 1.265, 'train_loss': 1.2259899139404298, 'epoch': 1.0}
+>> ==================== Round 31 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7233, 'train_samples_per_second': 1.146, 'train_steps_per_second': 1.146, 'train_loss': 1.0933260917663574, 'epoch': 1.0}
+>> ==================== Round 32 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3303, 'train_samples_per_second': 1.2, 'train_steps_per_second': 1.2, 'train_loss': 1.1550608634948731, 'epoch': 1.0}
+>> ==================== Round 33 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2608, 'train_samples_per_second': 1.211, 'train_steps_per_second': 1.211, 'train_loss': 1.1598503112792968, 'epoch': 1.0}
+>> ==================== Round 34 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2863, 'train_samples_per_second': 1.207, 'train_steps_per_second': 1.207, 'train_loss': 1.20732421875, 'epoch': 1.0}
+>> ==================== Round 35 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.1851, 'train_samples_per_second': 1.089, 'train_steps_per_second': 1.089, 'train_loss': 1.1381843566894532, 'epoch': 1.0}
+>> ==================== Round 36 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7284, 'train_samples_per_second': 1.146, 'train_steps_per_second': 1.146, 'train_loss': 1.081911849975586, 'epoch': 1.0}
+>> ==================== Round 37 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.466, 'train_samples_per_second': 1.181, 'train_steps_per_second': 1.181, 'train_loss': 1.1195484161376954, 'epoch': 1.0}
+>> ==================== Round 38 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.8449, 'train_samples_per_second': 1.131, 'train_steps_per_second': 1.131, 'train_loss': 1.193441677093506, 'epoch': 1.0}
+>> ==================== Round 39 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3657, 'train_samples_per_second': 1.195, 'train_steps_per_second': 1.195, 'train_loss': 1.0371475219726562, 'epoch': 1.0}
+>> ==================== Round 40 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.4665, 'train_samples_per_second': 1.181, 'train_steps_per_second': 1.181, 'train_loss': 1.019714069366455, 'epoch': 1.0}
+>> ==================== Round 41 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.8785, 'train_samples_per_second': 1.126, 'train_steps_per_second': 1.126, 'train_loss': 1.2882431030273438, 'epoch': 1.0}
+>> ==================== Round 42 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.0107, 'train_samples_per_second': 1.11, 'train_steps_per_second': 1.11, 'train_loss': 1.0875510215759276, 'epoch': 1.0}
+>> ==================== Round 43 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.0569, 'train_samples_per_second': 1.104, 'train_steps_per_second': 1.104, 'train_loss': 1.345137596130371, 'epoch': 1.0}
+>> ==================== Round 44 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9677, 'train_samples_per_second': 1.255, 'train_steps_per_second': 1.255, 'train_loss': 1.056814479827881, 'epoch': 1.0}
+>> ==================== Round 45 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.4441, 'train_samples_per_second': 1.184, 'train_steps_per_second': 1.184, 'train_loss': 1.2467327117919922, 'epoch': 1.0}
+>> ==================== Round 46 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 9.1783, 'train_samples_per_second': 1.09, 'train_steps_per_second': 1.09, 'train_loss': 1.136957550048828, 'epoch': 1.0}
+>> ==================== Round 47 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.452, 'train_samples_per_second': 1.183, 'train_steps_per_second': 1.183, 'train_loss': 1.2788238525390625, 'epoch': 1.0}
+>> ==================== Round 48 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.8048, 'train_samples_per_second': 1.281, 'train_steps_per_second': 1.281, 'train_loss': 1.1900516510009767, 'epoch': 1.0}
+>> ==================== Round 49 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.4043, 'train_samples_per_second': 1.19, 'train_steps_per_second': 1.19, 'train_loss': 1.0112901687622071, 'epoch': 1.0}
+>> ==================== Round 50 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9371, 'train_samples_per_second': 1.26, 'train_steps_per_second': 1.26, 'train_loss': 1.0770875930786132, 'epoch': 1.0}
+>> ==================== Round 51 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.8643, 'train_samples_per_second': 1.128, 'train_steps_per_second': 1.128, 'train_loss': 1.116450023651123, 'epoch': 1.0}
+>> ==================== Round 52 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2733, 'train_samples_per_second': 1.209, 'train_steps_per_second': 1.209, 'train_loss': 1.2216922760009765, 'epoch': 1.0}
+>> ==================== Round 53 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.6115, 'train_samples_per_second': 1.161, 'train_steps_per_second': 1.161, 'train_loss': 1.2372955322265624, 'epoch': 1.0}
+>> ==================== Round 54 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.833, 'train_samples_per_second': 1.132, 'train_steps_per_second': 1.132, 'train_loss': 1.0579840660095214, 'epoch': 1.0}
+>> ==================== Round 55 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.9365, 'train_samples_per_second': 1.119, 'train_steps_per_second': 1.119, 'train_loss': 1.0880425453186036, 'epoch': 1.0}
+>> ==================== Round 56 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7835, 'train_samples_per_second': 1.285, 'train_steps_per_second': 1.285, 'train_loss': 1.251777744293213, 'epoch': 1.0}
+>> ==================== Round 57 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.5495, 'train_samples_per_second': 1.17, 'train_steps_per_second': 1.17, 'train_loss': 1.1228436470031737, 'epoch': 1.0}
+>> ==================== Round 58 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6991, 'train_samples_per_second': 1.299, 'train_steps_per_second': 1.299, 'train_loss': 1.1581410408020019, 'epoch': 1.0}
+>> ==================== Round 59 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1791, 'train_samples_per_second': 1.223, 'train_steps_per_second': 1.223, 'train_loss': 1.1838772773742676, 'epoch': 1.0}
+>> ==================== Round 60 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6857, 'train_samples_per_second': 1.301, 'train_steps_per_second': 1.301, 'train_loss': 1.3328630447387695, 'epoch': 1.0}
+>> ==================== Round 61 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.091, 'train_samples_per_second': 1.236, 'train_steps_per_second': 1.236, 'train_loss': 1.354849910736084, 'epoch': 1.0}
+>> ==================== Round 62 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6233, 'train_samples_per_second': 1.312, 'train_steps_per_second': 1.312, 'train_loss': 1.3138625144958496, 'epoch': 1.0}
+>> ==================== Round 63 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2928, 'train_samples_per_second': 1.206, 'train_steps_per_second': 1.206, 'train_loss': 1.3116794586181642, 'epoch': 1.0}
+>> ==================== Round 64 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9841, 'train_samples_per_second': 1.252, 'train_steps_per_second': 1.252, 'train_loss': 0.968666934967041, 'epoch': 1.0}
+>> ==================== Round 65 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.7003, 'train_samples_per_second': 1.149, 'train_steps_per_second': 1.149, 'train_loss': 1.0163286209106446, 'epoch': 1.0}
+>> ==================== Round 66 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.8245, 'train_samples_per_second': 1.278, 'train_steps_per_second': 1.278, 'train_loss': 1.2192291259765624, 'epoch': 1.0}
+>> ==================== Round 67 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2016, 'train_samples_per_second': 1.219, 'train_steps_per_second': 1.219, 'train_loss': 1.111690139770508, 'epoch': 1.0}
+>> ==================== Round 68 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.8214, 'train_samples_per_second': 1.279, 'train_steps_per_second': 1.279, 'train_loss': 1.2486743927001953, 'epoch': 1.0}
+>> ==================== Round 69 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1302, 'train_samples_per_second': 1.23, 'train_steps_per_second': 1.23, 'train_loss': 1.2925885200500489, 'epoch': 1.0}
+>> ==================== Round 70 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.5929, 'train_samples_per_second': 1.317, 'train_steps_per_second': 1.317, 'train_loss': 1.2593029975891112, 'epoch': 1.0}
+>> ==================== Round 71 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1256, 'train_samples_per_second': 1.231, 'train_steps_per_second': 1.231, 'train_loss': 1.2771458625793457, 'epoch': 1.0}
+>> ==================== Round 72 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.4651, 'train_samples_per_second': 1.34, 'train_steps_per_second': 1.34, 'train_loss': 1.2759626388549805, 'epoch': 1.0}
+>> ==================== Round 73 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3156, 'train_samples_per_second': 1.203, 'train_steps_per_second': 1.203, 'train_loss': 1.1957773208618163, 'epoch': 1.0}
+>> ==================== Round 74 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.9417, 'train_samples_per_second': 1.259, 'train_steps_per_second': 1.259, 'train_loss': 1.1958670616149902, 'epoch': 1.0}
+>> ==================== Round 75 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.0942, 'train_samples_per_second': 1.235, 'train_steps_per_second': 1.235, 'train_loss': 1.03804349899292, 'epoch': 1.0}
+>> ==================== Round 76 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7333, 'train_samples_per_second': 1.293, 'train_steps_per_second': 1.293, 'train_loss': 1.1709957122802734, 'epoch': 1.0}
+>> ==================== Round 77 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.013, 'train_samples_per_second': 1.248, 'train_steps_per_second': 1.248, 'train_loss': 1.0968216896057128, 'epoch': 1.0}
+>> ==================== Round 78 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7465, 'train_samples_per_second': 1.291, 'train_steps_per_second': 1.291, 'train_loss': 1.3665557861328126, 'epoch': 1.0}
+>> ==================== Round 79 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1958, 'train_samples_per_second': 1.22, 'train_steps_per_second': 1.22, 'train_loss': 1.3452752113342286, 'epoch': 1.0}
+>> ==================== Round 80 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7062, 'train_samples_per_second': 1.298, 'train_steps_per_second': 1.298, 'train_loss': 1.1809505462646483, 'epoch': 1.0}
+>> ==================== Round 81 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2844, 'train_samples_per_second': 1.207, 'train_steps_per_second': 1.207, 'train_loss': 1.2157431602478028, 'epoch': 1.0}
+>> ==================== Round 82 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.627, 'train_samples_per_second': 1.311, 'train_steps_per_second': 1.311, 'train_loss': 1.4126495361328124, 'epoch': 1.0}
+>> ==================== Round 83 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.6024, 'train_samples_per_second': 1.162, 'train_steps_per_second': 1.162, 'train_loss': 1.3903697967529296, 'epoch': 1.0}
+>> ==================== Round 84 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6668, 'train_samples_per_second': 1.304, 'train_steps_per_second': 1.304, 'train_loss': 1.141046905517578, 'epoch': 1.0}
+>> ==================== Round 85 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1504, 'train_samples_per_second': 1.227, 'train_steps_per_second': 1.227, 'train_loss': 1.1386972427368165, 'epoch': 1.0}
+>> ==================== Round 86 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.7481, 'train_samples_per_second': 1.291, 'train_steps_per_second': 1.291, 'train_loss': 1.1860958099365235, 'epoch': 1.0}
+>> ==================== Round 87 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.0359, 'train_samples_per_second': 1.244, 'train_steps_per_second': 1.244, 'train_loss': 1.4381434440612793, 'epoch': 1.0}
+>> ==================== Round 88 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6392, 'train_samples_per_second': 1.309, 'train_steps_per_second': 1.309, 'train_loss': 1.0826777458190917, 'epoch': 1.0}
+>> ==================== Round 89 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2388, 'train_samples_per_second': 1.214, 'train_steps_per_second': 1.214, 'train_loss': 1.1762858390808106, 'epoch': 1.0}
+>> ==================== Round 90 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6257, 'train_samples_per_second': 1.311, 'train_steps_per_second': 1.311, 'train_loss': 1.077761459350586, 'epoch': 1.0}
+>> ==================== Round 91 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.2935, 'train_samples_per_second': 1.206, 'train_steps_per_second': 1.206, 'train_loss': 1.1404620170593263, 'epoch': 1.0}
+>> ==================== Round 92 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6983, 'train_samples_per_second': 1.299, 'train_steps_per_second': 1.299, 'train_loss': 1.2309123039245606, 'epoch': 1.0}
+>> ==================== Round 93 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1887, 'train_samples_per_second': 1.221, 'train_steps_per_second': 1.221, 'train_loss': 1.2172369003295898, 'epoch': 1.0}
+>> ==================== Round 94 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6175, 'train_samples_per_second': 1.313, 'train_steps_per_second': 1.313, 'train_loss': 1.2477735519409179, 'epoch': 1.0}
+>> ==================== Round 95 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.3006, 'train_samples_per_second': 1.205, 'train_steps_per_second': 1.205, 'train_loss': 1.049954605102539, 'epoch': 1.0}
+>> ==================== Round 96 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.639, 'train_samples_per_second': 1.309, 'train_steps_per_second': 1.309, 'train_loss': 1.2174182891845704, 'epoch': 1.0}
+>> ==================== Round 97 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 8.1048, 'train_samples_per_second': 1.234, 'train_steps_per_second': 1.234, 'train_loss': 1.2725816726684571, 'epoch': 1.0}
+>> ==================== Round 98 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr
+{'train_runtime': 7.6563, 'train_samples_per_second': 1.306, 'train_steps_per_second': 1.306, 'train_loss': 1.1529815673828125, 'epoch': 1.0}
+>> ==================== Round 99 : [0] ====================
+Optimizer set to: SGDr
+Optimizer: SGDr

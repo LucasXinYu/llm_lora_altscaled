@@ -1,6 +1,6 @@
 import os
 
-results_dir = "/root/autodl-tmp/OpenFedLLM/save/gsm8k_20000_gd_c1s1_i10_b1a1_l512_r8a8_altFalse_20250313022141/"
+results_dir = "/root/autodl-tmp/OpenFedLLM/save/gsm8k_20000_fedprox_c1s1_i10_b1a1_l512_r4a8_altTrue_20250314081905/"
 #os.makedirs(results_dir, exist_ok=True)
 
 import numpy as np
@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load training loss data
-training_loss = np.load("/root/autodl-tmp/OpenFedLLM/save/gsm8k_20000_gd_c1s1_i10_b1a1_l512_r8a8_altFalse_20250313022141/training_loss.npy")
+training_loss = np.load("/root/autodl-tmp/OpenFedLLM/save/gsm8k_20000_fedprox_c1s1_i10_b1a1_l512_r4a8_altTrue_20250314081905/training_loss.npy")
 
 # Replace -1 with NaN for better visualization
 training_loss = np.where(training_loss == -1, np.nan, training_loss)

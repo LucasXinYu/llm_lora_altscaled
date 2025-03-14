@@ -1,0 +1,193 @@
+>> ===== After processing, Dataset gsm8k has 14946 examples. =====
+dataload finished!
+==================
+sample_num_list:
+[14946]
+base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.0.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.1.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.2.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.3.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.4.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.5.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.6.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.7.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.8.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.9.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.10.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.11.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.12.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.13.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.14.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.15.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.16.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.17.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.18.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.19.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.20.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.21.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.22.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.23.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.24.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.25.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.26.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.27.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.28.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.29.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.30.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.q_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.q_proj.lora_B.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.v_proj.lora_A.default.weight: requires_grad=True
+base_model.model.model.layers.31.self_attn.v_proj.lora_B.default.weight: requires_grad=True
+trainable params: 8,388,608 || all params: 3,508,801,536 || trainable%: 0.23907331075678143
+>> ==================== Round 1 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.7951, 'train_samples_per_second': 2.635, 'train_steps_per_second': 2.635, 'train_loss': 1.0753275871276855, 'epoch': 1.0}
+>> ==================== Round 2 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.038, 'train_samples_per_second': 3.292, 'train_steps_per_second': 3.292, 'train_loss': 1.1843597412109375, 'epoch': 1.0}
+>> ==================== Round 3 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.9482, 'train_samples_per_second': 3.392, 'train_steps_per_second': 3.392, 'train_loss': 1.2811095237731933, 'epoch': 1.0}
+>> ==================== Round 4 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.3672, 'train_samples_per_second': 2.97, 'train_steps_per_second': 2.97, 'train_loss': 1.0164894104003905, 'epoch': 1.0}
+>> ==================== Round 5 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.9052, 'train_samples_per_second': 3.442, 'train_steps_per_second': 3.442, 'train_loss': 1.249112319946289, 'epoch': 1.0}
+>> ==================== Round 6 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.8333, 'train_samples_per_second': 3.529, 'train_steps_per_second': 3.529, 'train_loss': 1.2444056510925292, 'epoch': 1.0}
+>> ==================== Round 7 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.7533, 'train_samples_per_second': 3.632, 'train_steps_per_second': 3.632, 'train_loss': 1.1836033821105958, 'epoch': 1.0}
+>> ==================== Round 8 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.9625, 'train_samples_per_second': 3.376, 'train_steps_per_second': 3.376, 'train_loss': 1.2287652015686035, 'epoch': 1.0}
+>> ==================== Round 9 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.8799, 'train_samples_per_second': 3.472, 'train_steps_per_second': 3.472, 'train_loss': 1.331779956817627, 'epoch': 1.0}
+>> ==================== Round 10 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.1466, 'train_samples_per_second': 3.178, 'train_steps_per_second': 3.178, 'train_loss': 1.230536651611328, 'epoch': 1.0}
+>> ==================== Round 11 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.1687, 'train_samples_per_second': 3.156, 'train_steps_per_second': 3.156, 'train_loss': 1.039624309539795, 'epoch': 1.0}
+>> ==================== Round 12 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.0871, 'train_samples_per_second': 3.239, 'train_steps_per_second': 3.239, 'train_loss': 1.1056905746459962, 'epoch': 1.0}
+>> ==================== Round 13 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 2.951, 'train_samples_per_second': 3.389, 'train_steps_per_second': 3.389, 'train_loss': 1.2298573493957519, 'epoch': 1.0}
+>> ==================== Round 14 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
+{'train_runtime': 3.1145, 'train_samples_per_second': 3.211, 'train_steps_per_second': 3.211, 'train_loss': 1.0779462814331056, 'epoch': 1.0}
+>> ==================== Round 15 : [0] ====================
+Optimizer set to: SGD
+Optimizer: SGD
