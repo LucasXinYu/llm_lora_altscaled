@@ -4,7 +4,7 @@
 # chmod +x run_main_sft.sh
 # bash run_main_sft.sh
 
-optim=("sgdr" "gd")
+optim=("sgdr" "sgd")
 ranks=(8 16) #(8 16)
 alt_opts=("True" "False")  # Renamed to avoid confusion
 
